@@ -10,7 +10,11 @@ server:
   port: 8089
 
 
-ldsr:
-  handler:
-    name: org.ldsr.handler
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml # 指定Mapper文件的位置
+  type-aliases-package: org.ldsr.bean # 指定实体类所在的包
+  type-handlers-package: org.ldsr.handler
+  global-config:
+    db-config:
+      geometry-type: wkt  # 指定geometry类型为WKT，这是Mybatis-plus支持的
 
